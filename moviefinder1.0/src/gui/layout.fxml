@@ -1,0 +1,52 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.layout.HBox?>
+<GridPane fx:controller="moviefinder.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <Text text="Movie Finder"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2"/>
+
+    <Label text="Search"
+          GridPane.columnIndex="0" GridPane.rowIndex="1"
+          GridPane.columnSpan="2"/>
+
+    <TextField fx:id="searchString"
+            GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+
+    <Label text="Category"
+          GridPane.columnIndex="0" GridPane.rowIndex="2"
+          GridPane.columnSpan="2"/>
+
+    <ComboBox fx:id="categoryCombo" prefWidth="120.0" promptText="Choose Category"
+              GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.columnSpan="2">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Apple" />
+                <String fx:value="Orange" />
+                <String fx:value="Pear" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <HBox spacing="10" alignment="bottom_right"
+          GridPane.columnIndex="2" GridPane.rowIndex="4">
+        <Button text="GO"
+                onAction="#handleGOButtonAction"/>
+    </HBox>
+
+    <Text fx:id="actiontarget"
+          GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+</GridPane>
